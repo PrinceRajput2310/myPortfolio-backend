@@ -1,15 +1,15 @@
-import Message from "../models/message.js";
+// import Message from "../models/message.js";
 import nodemailer from "nodemailer";
 
 export const sendMessage = async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message)
-    return res.status(400).json({ error: "All fields are required" });
+    return res.status(400).json({ error: "All fields are required" })
 
   try {
-    const newMessage = new Message({ name, email, message });
-    await newMessage.save();
+    // const newMessage = new Message({ name, email, message });
+    // await newMessage.save();
 
     // Setup email
     const transporter = nodemailer.createTransport({
